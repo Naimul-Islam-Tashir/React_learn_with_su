@@ -1,9 +1,10 @@
 import './App.css';
-import Clock from './component/Clock';
+import ClockList from './component/ClockList';
 
 function App() {
+  let quantities=[1,2,3];
   return (
-   <Clock />
+   <ClockList quantities={quantities}/>
   );
 }
 
