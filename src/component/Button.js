@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 class Button extends Component{
     shouldComponentUpdate(nextprops){
-        const {change:nextChange ,locale:nextLocal}=this.props;
         const {change:currentChange ,locale:currentLocal}=this.props;
-        if(currentChange===nextChange &&nextLocal===currentLocal){
+        const {change:nextChange ,locale:nextLocal}=nextprops;
+        if(currentChange===nextChange && nextLocal===currentLocal){
             return false;
         }
         else{
@@ -12,12 +12,14 @@ class Button extends Component{
         }
     }
     render(){
-        console.log("button component render");
-        const { change ,locale } = this.props;
+        const { change ,locale ,show} = this.props;
         return (
+            <div>
             <button type="button" onClick={()=>change(locale)}>
-                Click here
+                {locale==='bn-BD' ? "Change Click":"ক্লিক করুন"}
             </button>
+            {show ? <h1>English CLock </h1>:<h1>Bangla clock </h1>}
+            </div>
         );
     }
 }

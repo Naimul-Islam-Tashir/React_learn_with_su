@@ -8,7 +8,7 @@ class Clock extends Component{
 //        this.handleclick=this.handleclick.bind(this);
     
 //    } 
-state = { date: new Date(),locale:'bn-BD' };
+state = { date: new Date(),locale:'en-US' };
 
    componentDidMount(){
        this.clockTimer=setInterval(() => {this.tick()
@@ -31,13 +31,18 @@ state = { date: new Date(),locale:'bn-BD' };
        }); 
   }
 render(){
-    console.log("clock component render");
     const {date,locale} = this.state;
+    // let button;
+    // if(locale==='en-US'){
+    //    button=(<Button change={this.handleclick} locale="bn-BD"/>); 
+    // }
+    // else{
+    //     button=( <Button change={this.handleclick} locale= "en-US"/>);
+    // }
     return(
-       
         <div>
         <h1>{date.toLocaleTimeString(locale)}</h1>
-        <Button change={this.handleclick} locale="en-US"/>
+          {locale==='en-US'?(<Button change={this.handleclick} locale="bn-BD" show/>):( <Button change={this.handleclick} locale= "en-US" show={false} />)}
         </div>
     )
 }
