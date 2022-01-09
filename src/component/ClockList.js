@@ -5,7 +5,6 @@ function ClockList({quantities = [] }){
         <div>
         {quantities.map(()=>(
            <Clock key={Math.random()}/> 
-         
         ))} 
          <hr/>
     </div>     
