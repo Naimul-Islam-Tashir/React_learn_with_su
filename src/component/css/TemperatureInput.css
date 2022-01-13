@@ -1,0 +1,20 @@
+.container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.container input {
+    width: 50%;
+    height: 23px;
+    border: 2px solid rgb(92, 238, 99);
+    border-radius: 20px;
+    padding: 2px 15px;
+    background: none;
+
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgb(162, 0, 255);
+
+}

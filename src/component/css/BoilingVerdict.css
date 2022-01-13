@@ -1,0 +1,17 @@
+.common {
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cool {
+    color: rgb(255, 255, 255);
+    background-color: rgb(129, 192, 243);
+}
+
+.hot {
+    color: rgb(255, 0, 0);
+    background-color: rgb(167, 238, 153);
+}
