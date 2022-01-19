@@ -4,11 +4,22 @@ import Counter from './component/Counter';
 import Section from './component/Section';
 import ThemeContext from './context/themeContext';
 class App extends Component {
-  state={
-    theme:'D'
-  }
+  state = {
+    theme: 'light',
+    switchTheme: () => {
+        this.setState(({ theme }) => {
+            if (theme === 'dark') {
+                return {
+                    theme: 'light',
+                };
+            }
+            return {
+                theme: 'dark',
+            };
+        });
+    },
+};
   render(){
-    const {theme}=this.state;
     return (
       <div>
            <Counter>
@@ -17,7 +28,7 @@ class App extends Component {
                        {incrementCount} />
                    )}
            </Counter>
-           <ThemeContext.Provider value={{ theme }}>
+           <ThemeContext.Provider value={this.state}>
               <Section/> 
            </ThemeContext.Provider>
       </div>

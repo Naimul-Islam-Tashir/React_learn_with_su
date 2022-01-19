@@ -7,5 +7,5 @@ export default function Section() {
             <h1>This is a section</h1>
             <Content/>
         </div>
-    )
+    );
 }
