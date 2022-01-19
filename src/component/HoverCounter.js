@@ -1,14 +1,11 @@
-import React, { Component } from "react";
-
-class HoverCounter extends Component{
-    
-    render(){
-        const {count ,incrementCount}=this.props;
-        return (
-            <div>
-                <span type="button" onMouseOver={incrementCount}> Hover {count} Times</span>
-            </div>
-        );
-    }
+import React from "react";
+export default function HoverCounter({count ,incrementCount,theme}) {
+    const style = theme === 'D'? {backgroundColor:'#000000',color:'#FFFFFF'}:null;
+    return (
+        <div>
+             <h1 type="button" onMouseOver={incrementCount} style={style}> 
+             Hover {count} Times
+             </h1>
+        </div>
+    );
 }
-export default HoverCounter;
