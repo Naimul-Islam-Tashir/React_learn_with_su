@@ -1,3 +1,4 @@
+import React from "react";
 function Button({handleclick,children}){
     console.log(`rendering button ${children}`)
  return(
@@ -8,4 +9,4 @@ function Button({handleclick,children}){
      </div>
  )
 }
-export default Button;
+export default React.memo(Button);
