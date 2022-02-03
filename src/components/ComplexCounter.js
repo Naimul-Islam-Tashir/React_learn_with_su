@@ -1,13 +1,18 @@
 import { useReducer } from "react";
 const initalState={
-    counter:0,
+    counter1:0,
+    counter2:0
 };
 const reducer =(state,action)=>{
     switch(action.type){
-        case 'increment':
-            return {counter:state.counter+action.value};
-        case 'decrement':
-            return {counter:state.counter-action.value};
+        case 'increment1':
+            return {...state,counter1:state.counter1+action.value};
+        case 'decrement1':
+            return {...state,counter1:state.counter1-action.value};
+        case 'increment2':
+            return {...state,counter2:state.counter2+action.value};
+        case 'decrement2':
+            return {...state,counter2:state.counter2-action.value};
         default:
             return state;
     }
@@ -17,25 +22,31 @@ function ComplexCounter(){
    const [count,dispatch]= useReducer(reducer,initalState);
  return(
         <div>
-             <p>CounT : - {count.counter}</p>
+             <p>CounT : - {count.counter1}</p>
              <button type="button" onClick={()=>
              dispatch({
-                 type:'increment',
+                 type:'increment1',
                  value:1
-             })}>Increament By 1</button>
+             })}>Increament1 By 1</button>
+
              <button type="button" onClick={()=>dispatch({
-                 type:'decrement',
+                 type:'decrement1',
                  value:1
-             })} >Decreament By 1</button>
+             })} >Decreament1 By 1</button>
+
+             <p>CounT : - {count.counter2}</p>
+
               <button type="button" onClick={()=>
              dispatch({
-                 type:'increment',
+                 type:'increment2',
                  value:5
-             })}>Increament By 5</button>
+             })}>Increament2 By 5</button>
+
              <button type="button" onClick={()=>dispatch({
-                 type:'decrement',
+                 type:'decrement2',
                  value:5
-             })} >Decreament By 5</button>
+             })} >Decreament2 By 5</button>
+
         </div>
  );    
 }

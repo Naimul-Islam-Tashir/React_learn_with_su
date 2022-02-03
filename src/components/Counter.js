@@ -11,7 +11,6 @@ const reducer =(state,action)=>{
     }
 
 }
-
 function Counter(){
    const [count,dispatch]= useReducer(reducer,initalState);
  return(
