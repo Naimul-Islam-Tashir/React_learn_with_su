@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 const initalState=0;
-const initalState2=0;
+const initalState2=6;
 
 const reducer =(state,action)=>{
     switch(action.type){

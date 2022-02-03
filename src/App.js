@@ -1,12 +1,28 @@
-import './App.css';
-import Counter from './components/CounterThree';
+import React, { useReducer ,createContext } from 'react';
+import ComponentA from './components/nastedComponent/ComponentA';
 
-function App() {
-  return (
-    <div className="App">
-        <Counter/>
-    </div>
-  );
+export const counterContext = createContext();
+
+const initialState = 0;
+const reducer = (state, action) => {
+    switch (action) {
+        case 'increment':
+            return state + 1;
+        case 'decrement':
+            return state - 1;
+        default:
+            return state;
+    }
+};
+
+export default function App() {
+    const [count, dispatch] = useReducer(reducer, initialState);
+    return (
+        <div className="app">
+            <div>Count: {count}</div>
+            <counterContext.Provider value={{ countDispatch: dispatch }}>
+                <ComponentA />
+            </counterContext.Provider>
+        </div>
+    );
 }
-
-export default App;
